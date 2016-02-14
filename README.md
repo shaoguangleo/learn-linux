@@ -1,9 +1,5 @@
 #我们编程吧 之 Linux 学习手册
-<<<<<<< HEAD
 **Version 0.4 **
-=======
-**Version 0.3 **
->>>>>>> origin/master
 
 [TOC]
 
@@ -183,7 +179,6 @@ find的语法: `find 路径 约束条件`
 ```
 find . –mtime -2
 ```
-<<<<<<< HEAD
 
 
 
@@ -257,8 +252,6 @@ gnuplot              (1)  – an interactive plotting program
 
 GNU项目提供了info页面来代替手册文档，info页面可以通过info阅读器来显示，info页面使用超链接，与网页结构类似。
 
-=======
->>>>>>> origin/master
 
 
 #更多信息
