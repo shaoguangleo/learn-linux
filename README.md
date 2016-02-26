@@ -279,6 +279,14 @@ GNU项目提供了info页面来代替手册文档，info页面可以通过info�
 
  
 
+# OS
+
+## Ubuntu
+
+
+## CentOS
+
+
 
 #更多信息
 Hi，XDJM们，更多信息欢迎移步[我的github](https://github.com/shaoguangleo)或微信公众号letsProgramming.
