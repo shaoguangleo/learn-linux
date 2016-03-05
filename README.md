@@ -203,7 +203,7 @@ less foo.html
 
 2、PS2—再谈提示符
 
-一个非常长的命令可以通过在末尾加“\”使其分行显示。多行命令的默认提示符是“>”。 我们可以通过修改PS2 ，将提示符修改为“continue->” 
+一个非常长的命令可以通过在末尾加“\”使其分行显示。多行命令的默认提示符是“>”。 我们可以通过修改PS2 ，将提示符修改为“continue->”
 
 
 
@@ -212,7 +212,7 @@ less foo.html
 linux命令是对Linux系统进行管理的命令。对于Linux系统来说，无论是中央处理器、内存、磁盘驱动器、键盘、鼠标，还是用户等都是文件，Linux系统管理的命令是它正常运行的核心，与之前的DOS命令类似。linux命令在系统中有两种类型：内置Shell命令和Linux命令。
 也或者是用C、C++语言编写的程序，也可以是perl、python、ruby等脚本语言写的程序。
 
- 
+
 ###获得shell内置命令的帮助文档–help
 
 可以使用**help cmd**来查看，有些需要使用**cmd –help**来查看。
@@ -240,7 +240,7 @@ bno_plot             (1)  – generate interactive 3D plot of IO blocks and size
 gnuplot              (1)  – an interactive plotting program
 pbmtoplot            (1)  – convert a PBM image into a Unix ‘plot’ file
 
- 
+
 ###显示命令的简要概述 – whatis
 **whatis** 命令等同于使用 man -f 命令。
 
@@ -256,28 +256,28 @@ GNU项目提供了info页面来代替手册文档，info页面可以通过info�
 
 ## useradd
 
-**功能说明**：建立用户帐号。 
+**功能说明**：建立用户帐号。
 
-语法：useradd [-mMnr][-c <备注>][-d <登入目录>][-e <有效期限>][-f <缓冲天数>][-g <群组>][-G <群组>][-s <shell>][-u <uid>][用户帐号] 或 useradd -D [-b][-e <有效期限>][-f <缓冲天数>][-g <群组>][-G <群组>][-s <shell>] 
+语法：useradd [-mMnr][-c <备注>][-d <登入目录>][-e <有效期限>][-f <缓冲天数>][-g <群组>][-G <群组>][-s <shell>][-u <uid>][用户帐号] 或 useradd -D [-b][-e <有效期限>][-f <缓冲天数>][-g <群组>][-G <群组>][-s <shell>]
 
 
 参数 | 说明
 -----|-----
-　-c<备注> 　| 加上备注文字。备注文字会保存在passwd的备注栏位中。　 
--d<登入目录> |　指定用户登入时的启始目录。 
--D 　|_变更预设值． 
--e<有效期限> |　指定帐号的有效期限。 
--f<缓冲天数> |　指定在密码过期后多少天即关闭该帐号。 
-　-g<群组> |　指定用户所属的群组。 
-　-G<群组> |　指定用户所属的附加群组。 
-　-m |　自动建立用户的登入目录。 
-　-M |　不要自动建立用户的登入目录。 
-　-n 　|取消建立以用户名称为名的群组． 
-　-r 　|建立系统帐号。 
-　-s<shell>　 |　指定用户登入后所使用的shell。 
-　-u<uid> |　指定用户ID。 
+　-c<备注> 　| 加上备注文字。备注文字会保存在passwd的备注栏位中。　
+-d<登入目录> |　指定用户登入时的启始目录。
+-D 　|_变更预设值．
+-e<有效期限> |　指定帐号的有效期限。
+-f<缓冲天数> |　指定在密码过期后多少天即关闭该帐号。
+　-g<群组> |　指定用户所属的群组。
+　-G<群组> |　指定用户所属的附加群组。
+　-m |　自动建立用户的登入目录。
+　-M |　不要自动建立用户的登入目录。
+　-n 　|取消建立以用户名称为名的群组．
+　-r 　|建立系统帐号。
+　-s<shell>　 |　指定用户登入后所使用的shell。
+　-u<uid> |　指定用户ID。
 
- 
+
 
 # OS
 
@@ -289,6 +289,6 @@ GNU项目提供了info页面来代替手册文档，info页面可以通过info�
 
 
 #更多信息
-Hi，XDJM们，更多信息欢迎移步[我的github](https://github.com/shaoguangleo)或微信公众号letsProgramming.
+Hi，XDJM们，更多信息欢迎移步[我的github](https://github.com/shaoguangleo)、[CSDN](http://blog.csdn.net/shaoguangleo)或微信公众号letsProgramming.
 
 ![letsProgramming](http://img.blog.csdn.net/20160128231400788)
