@@ -223,7 +223,7 @@ GNU项目提供了info页面来代替手册文档，info页面可以通过info�
 
 
 
-## mkdir 
+## mkdir
 **mkdir** 命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有*写权限*，并且指定的目录名不能是当前目录中已有的目录。
 
 ### 命令格式：
@@ -278,13 +278,12 @@ mkdir -v test4
 
 实例五：一个命令创建项目的目录结构
 
-参考：http://www.ibm.com/developerworks/cn/aix/library/au-badunixhabits.html
 
-命令：
 
+```
 mkdir -vp project/{src/,include/,lib/,bin/,doc/{info,product},logs/{info,product},service/deploy/{info,product}}
+```
 
-输出：
 
 ```
 $ mkdir -vp project/{src/,include/,lib/,bin/,doc/{info,product},logs/{info,product},service/deploy/{info,product}}
