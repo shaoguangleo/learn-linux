@@ -1,6 +1,6 @@
 # 我们编程吧 之 Linux 学习手册
 
-**Version 0.41**
+**Version 0.42**
 
 [TOC]
 
@@ -173,9 +173,7 @@ less *.c
 
 less foo.html
 
-## 按下v键来编辑文件
-
-## 退出编辑器后，你可以继续用less浏览了
+按下v键来编辑文件,退出编辑器后，你可以继续用less浏览了
 
 ## Linux下PS1、PS2的含义
 
@@ -222,6 +220,121 @@ gnuplot (1) – an interactive plotting program 、
 ### 显示程序的info条目 – info
 
 GNU项目提供了info页面来代替手册文档，info页面可以通过info阅读器来显示，info页面使用超链接，与网页结构类似。
+
+
+
+## mkdir 
+**mkdir** 命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有*写权限*，并且指定的目录名不能是当前目录中已有的目录。
+
+### 命令格式：
+
+```
+mkdir [可选项] 目录
+```
+
+### 命令功能：
+
+- 通过`mkdir`命令在指定位置创建以文件夹或目录
+- 要创建文件夹或目录的用户必须对所创建的文件夹的父文件夹具有写权限
+- 所创建的文件夹(目录)不能与其父目录(即父文件夹)中的文件名重名，即同一个目录下不能有同名的(区分大小写)。
+
+### 命令参数：
+
+    -m, --mode=模式，设定权限<模式> (类似 chmod)，而不是 rwxrwxrwx 减 umask
+    **-p**, --parents  可以是一个路径名称。此时若路径中的某些目录尚不存在,加上此选项后,系统将自动建立好那些尚不存在的目录,即**一次可以建立多个目录**
+    -v, --verbose  每次创建新目录都显示信息
+    --help   显示此帮助信息并退出
+    --version  输出版本信息并退出
+
+### 命令实例：
+
+实例1：创建一个空目录
+
+```
+mkdir hello
+```
+
+
+实例2：递归创建多个目录
+
+```
+mkdir -p a/b/c/d/e/f/g
+```
+
+实例3：创建权限为777的目录
+
+```
+mkdir -m 777 test3
+```
+
+
+实例4：创建新目录都显示信息
+
+```
+
+mkdir -v test4
+
+```
+
+实例五：一个命令创建项目的目录结构
+
+参考：http://www.ibm.com/developerworks/cn/aix/library/au-badunixhabits.html
+
+命令：
+
+mkdir -vp project/{src/,include/,lib/,bin/,doc/{info,product},logs/{info,product},service/deploy/{info,product}}
+
+输出：
+
+```
+$ mkdir -vp project/{src/,include/,lib/,bin/,doc/{info,product},logs/{info,product},service/deploy/{info,product}}
+
+mkdir: created directory ‘project’
+mkdir: created directory ‘project/src/’
+mkdir: created directory ‘project/include/’
+mkdir: created directory ‘project/lib/’
+mkdir: created directory ‘project/bin/’
+mkdir: created directory ‘project/doc’
+mkdir: created directory ‘project/doc/info’
+mkdir: created directory ‘project/doc/product’
+mkdir: created directory ‘project/logs’
+mkdir: created directory ‘project/logs/info’
+mkdir: created directory ‘project/logs/product’
+mkdir: created directory ‘project/service’
+mkdir: created directory ‘project/service/deploy’
+mkdir: created directory ‘project/service/deploy/info’
+mkdir: created directory ‘project/service/deploy/product’
+
+
+$ tree project/
+
+project
+├── bin
+├── doc
+│   ├── info
+│   └── product
+├── include
+├── lib
+├── logs
+│   ├── info
+│   └── product
+├── service
+│   └── deploy
+│       ├── info
+│       └── product
+└── src
+
+14 directories, 0 files
+```
+
+![linux-mkdir](linux-mkdir.png)
+
+![linux-tree](linux-tree.png)
+
+
+
+
+
 
 ## useradd
 
