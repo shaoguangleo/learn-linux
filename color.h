@@ -14,5 +14,5 @@
 #define COLOR_BLUE      "\x1B[34m"
 #define COLOR_MAGENTA   "\x1B[35m"
 #define COLOR_CYAN      "\x1B[36m"
-#define COLOR_WHITE     "\x1B[37m:w
+#define COLOR_WHITE     "\x1B[37m"
 #endif
