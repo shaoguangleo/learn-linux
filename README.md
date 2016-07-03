@@ -334,7 +334,19 @@ project
 
 ![linux-tree](linux-tree.png)
 
+## 日期和时间
 
+### date
+
+显示时间信息。
+
+![linux-date](linux-date.png)
+
+### cal
+
+显示日历信息。
+
+![linux-cal](linux-cal.png)
 
 
 
