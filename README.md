@@ -385,6 +385,96 @@ project
 
  | 指定用户ID。
 
+##远程登录不需要密码
+1. 在本机上操作ssh-keygen
+2. ssh-copy-id -i .ssh/id_rsa.pub remote_username@remote_ipaddress
+3. ssh remote_username@remote_ipaddress
+
+### 背景
+最近参加了一个培训，分配了很多的账号，随便找个账号的密码，如下所示`gyDYKdf39dk*dfs@&`，关键操作的过程中，你还需要打开多个终端。
+
+那么问题来了，如何才能缩短这个浪费生命的无聊过程呢，方法很简单，只有3步。
+
+### 远程登录不需要密码
+  1  在本机上操作**ssh-keygen**，会在目录.ssh种生成一个id_rsa.pub文件
+  2  **ssh-copy-id -i .ssh/id_rsa.pub remote_username@remote_ipaddress**
+  3  **ssh remote_username@remote_ipaddress**
+
+比如，来个实际操作：
+> 打开一个终端
+$ ssh-keygen
+拷贝
+$ ssh-copy-id -i .ssh/id_rsa.pub hero@192.168.2.3
+愉快登录
+$ ssh hero@192.168.2.3
+
+此时即可无密码登陆remote了
+
+在.ssh/config中输入下述信息，即可快捷将ssh remote_username@remote_ipaddress精简为ssh remote了
+
+```
+Host   remote
+    HostName 192.168.254.123
+    Port    22
+    User    hero
+    IdentityFile    ~/.ssh/id_rsa
+```
+
+## df - 查看硬盘大小
+
+使用man来查看df，我们知道这个命令的含义为report file system disk space usage。
+也就是查看文件系统的磁盘空间占用情况，可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。
+
+![linux-space](./res/linux-space.png)
+
+df命令还是有一些参数的，比如：
+
+![linux-df-help](./res/linux-df-help.png)
+
+那么其中几个最常用的也就下面几个：
+
+实例1：
+
+```
+df
+```
+
+不加任何参数，这个可读性不是很好，如下：
+
+![linux-df](./res/linux-df.png)
+
+**实例2**：
+
+```
+df -h
+```
+
+这个是我用的很多的参数，-h的含义前面也可以看到是human-read的意思，方便我们人类，会使用M、G这样的单位来区别
+
+![linux-df-h](./res/linux-df-h.png)
+
+实例3：
+
+```
+df -lh
+```
+
+这个主要用于挂载了诸如NFS的系统，其中l的意思是local，也就是本地的文件系统，如果没有挂载其他文件系统，加不加l参数其实是一样的。
+
+
+实例4：
+
+```
+df -T
+```
+
+用于打印文件系统类型，如下系统为xfs的。
+
+![linux-df-t](./res/linux-df-t.png)
+
+
+
+
 # OS
 
 ## Ubuntu
