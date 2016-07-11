@@ -293,10 +293,9 @@ gnuplot (1) – an interactive plotting program 、
 
 GNU项目提供了info页面来代替手册文档，info页面可以通过info阅读器来显示，info页面使用超链接，与网页结构类似。
 
-
-
 ## mkdir
-**mkdir** 命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有*写权限*，并且指定的目录名不能是当前目录中已有的目录。
+
+**mkdir** 命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有_写权限_，并且指定的目录名不能是当前目录中已有的目录。
 
 ### 命令格式：
 
@@ -312,11 +311,13 @@ mkdir [可选项] 目录
 
 ### 命令参数：
 
-    -m, --mode=模式，设定权限<模式> (类似 chmod)，而不是 rwxrwxrwx 减 umask
-    **-p**, --parents  可以是一个路径名称。此时若路径中的某些目录尚不存在,加上此选项后,系统将自动建立好那些尚不存在的目录,即**一次可以建立多个目录**
-    -v, --verbose  每次创建新目录都显示信息
-    --help   显示此帮助信息并退出
-    --version  输出版本信息并退出
+```
+-m, --mode=模式，设定权限<模式> (类似 chmod)，而不是 rwxrwxrwx 减 umask
+**-p**, --parents  可以是一个路径名称。此时若路径中的某些目录尚不存在,加上此选项后,系统将自动建立好那些尚不存在的目录,即**一次可以建立多个目录**
+-v, --verbose  每次创建新目录都显示信息
+--help   显示此帮助信息并退出
+--version  输出版本信息并退出
+```
 
 ### 命令实例：
 
@@ -325,7 +326,6 @@ mkdir [可选项] 目录
 ```
 mkdir hello
 ```
-
 
 实例2：递归创建多个目录
 
@@ -339,23 +339,18 @@ mkdir -p a/b/c/d/e/f/g
 mkdir -m 777 test3
 ```
 
-
 实例4：创建新目录都显示信息
 
 ```
 
 mkdir -v test4
-
 ```
 
 实例五：一个命令创建项目的目录结构
 
-
-
 ```
 mkdir -vp project/{src/,include/,lib/,bin/,doc/{info,product},logs/{info,product},service/deploy/{info,product}}
 ```
-
 
 ```
 $ mkdir -vp project/{src/,include/,lib/,bin/,doc/{info,product},logs/{info,product},service/deploy/{info,product}}
@@ -382,17 +377,17 @@ $ tree project/
 project
 ├── bin
 ├── doc
-│   ├── info
-│   └── product
+│   ├── info
+│   └── product
 ├── include
 ├── lib
 ├── logs
-│   ├── info
-│   └── product
+│   ├── info
+│   └── product
 ├── service
-│   └── deploy
-│       ├── info
-│       └── product
+│   └── deploy
+│       ├── info
+│       └── product
 └── src
 
 14 directories, 0 files
