@@ -472,8 +472,63 @@ df -T
 
 ![linux-df-t](./res/linux-df-t.png)
 
+## free -查看系统内存
 
+**free**这个命令在Linux系统监控的工具里面，算是使用的比较多的一个。
 
+使用_man_查看可知，含义为：
+
+> Display amount of free and used memory in the system
+
+也就是显示可用、易用的系统内存，它直接读取`/proc/meminfo`文件。
+
+**实例一**
+
+先看下不加任何参数的时候，free的效果：
+
+```bash
+free
+```
+
+![linux-free](./res/linux-free.png)
+
+但是我比较喜欢用的还是_-h_参数，跟上一个命令df一样，此处的h表示_human being_的含义方便人类阅读。 除了这个还有_-b,-k,-m,-g_，含义分别为按照_字节、KB、MB、GB_的格式来显示。
+
+```bash
+free -h
+```
+
+![linux-free](./res/linux-free-h.png)
+
+```
+               total        used        free      shared  buff/cache   available
+Mem:           251G        6.1G        134G         69M        111G        244G
+Swap:          4.0G          0B        4.0G
+```
+
+说下其中的含义:
+
+- total : 表示总的物理内存大小，比如上面的就表示251GB的内存
+- used ：表示已经使用的内存大小，比如上面的就是使用了6.1GB
+- free ：表示可用多少
+- shared：表示多个进程共享的内存大小
+- buff/cache：表示磁盘缓存的大小，这里有两个方面，`buff`和`cache`，两个的含义不同
+
+  - buff ：something that has yet to be 'writeen' to disk ,还没有写入磁盘
+  - cache: something that had been 'read' from the disk and store for later user，从磁盘读取的方便下一次使用
+  - 这里就设计到Linux的设计哲学，比如读取一个100G的文件，第一次所使用的时间总归是后面再次读取的时间的好几倍，当然前提是没有释放掉caches
+
+- available：当然含义为可用的内存容量大小
+
+**实例二**
+
+还有一个比较常用的就是，如果你希望过一段时间就看下free的情况，OK，使用参数`-s`，后面跟的单位是秒，也就是每个几秒，统计一下使用的内存情况，比如我们每个2s，显示一下
+
+```
+free -s 2
+```
+
+![linux-free-s](./res/linux-free-s.png)
 
 # OS
 
