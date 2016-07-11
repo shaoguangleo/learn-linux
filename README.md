@@ -411,9 +411,6 @@ project
 
 ![linux-cal](linux-cal.png)
 
-
-
-
 ## useradd
 
 **功能说明**：建立用户帐号。
@@ -441,35 +438,32 @@ project
 <shell>
 </shell>
 
- | 指定用户登入后所使用的shell。 -u
+| 指定用户登入后所使用的shell。 -u
 
 <uid>
 </uid>
 
- | 指定用户ID。
+| 指定用户ID。
 
-##远程登录不需要密码
+## 远程登录不需要密码
+
 1. 在本机上操作ssh-keygen
 2. ssh-copy-id -i .ssh/id_rsa.pub remote_username@remote_ipaddress
 3. ssh remote_username@remote_ipaddress
 
 ### 背景
+
 最近参加了一个培训，分配了很多的账号，随便找个账号的密码，如下所示`gyDYKdf39dk*dfs@&`，关键操作的过程中，你还需要打开多个终端。
 
 那么问题来了，如何才能缩短这个浪费生命的无聊过程呢，方法很简单，只有3步。
 
 ### 远程登录不需要密码
-  1  在本机上操作**ssh-keygen**，会在目录.ssh种生成一个id_rsa.pub文件
-  2  **ssh-copy-id -i .ssh/id_rsa.pub remote_username@remote_ipaddress**
-  3  **ssh remote_username@remote_ipaddress**
+
+1 在本机上操作**ssh-keygen**，会在目录.ssh种生成一个id_rsa.pub文件 2 **ssh-copy-id -i .ssh/id_rsa.pub remote_username@remote_ipaddress** 3 **ssh remote_username@remote_ipaddress**
 
 比如，来个实际操作：
-> 打开一个终端
-$ ssh-keygen
-拷贝
-$ ssh-copy-id -i .ssh/id_rsa.pub hero@192.168.2.3
-愉快登录
-$ ssh hero@192.168.2.3
+
+> 打开一个终端 $ ssh-keygen 拷贝 $ ssh-copy-id -i .ssh/id_rsa.pub hero@192.168.2.3 愉快登录 $ ssh hero@192.168.2.3
 
 此时即可无密码登陆remote了
 
@@ -485,8 +479,7 @@ Host   remote
 
 ## df - 查看硬盘大小
 
-使用man来查看df，我们知道这个命令的含义为report file system disk space usage。
-也就是查看文件系统的磁盘空间占用情况，可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。
+使用man来查看df，我们知道这个命令的含义为report file system disk space usage。 也就是查看文件系统的磁盘空间占用情况，可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。
 
 ![linux-space](./res/linux-space.png)
 
@@ -523,7 +516,6 @@ df -lh
 ```
 
 这个主要用于挂载了诸如NFS的系统，其中l的意思是local，也就是本地的文件系统，如果没有挂载其他文件系统，加不加l参数其实是一样的。
-
 
 实例4：
 
