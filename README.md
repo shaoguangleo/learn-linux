@@ -85,7 +85,21 @@ tee可以保证你同时在屏幕上看到ls的输出并写入文件 my.log。
 
 tee 的解释为：_read from standard input and write to standard output and files_
 
-## 如何用cp拷贝指定序号的文件
+## cp - 万能拷贝
+
+### 命令简介
+
+```
+cp - copy files and directories
+```
+
+没错，cp就是copy的缩写，拷贝文件和目录的意思。
+
+简单的应用就是cp source dest，但是我确保下面的几个应该会让你眼前一亮的。
+
+
+
+### 实例 如何用cp拷贝指定序号的文件
 
 现在有文件夹filename，内有文档，名字是从1.dat, 2.dat, 3.dat 一直到9999.dat,10000.dat,现在希望从第N组数据即N.dat到第M组数据M.dat的文件拷贝到别的文件夹中，方法如下：
 
