@@ -867,6 +867,23 @@ AB  ABC
 ```
 
 
+## xterm
+
+### xterm包的简介
+最古老最基础的X Window终端模拟包是xterm。xterm包是在X Window出现之初便已经存在了的，默认包含在大多数X Window包中。
+
+XTerm是一个X Window System上的终端模拟器，用来提供多个独立的SHELL输入输出。
+
+XTerm最先是Jim Gettys的学生Mark Vandevoorde在1984年夏天为VS100写的独立虚拟终端，当时X的开发刚刚开始。很快人们就发现它作为X的一部分比作为独立的程序更为有用，于是它开始针对X而开发。
+
+Gettys曾讲述过有关的故事, “xterm内部如此恐怖的部分原因是它最初被计划开发成一个能驱动多个VS100显示器的单独进程。”（"part of why xterm’s internals are so horrifying is that it was originally intended that a single process be able to drive multiple VS100 displays."）
+
+xterm包提供基本的VT102/220终端模拟CLI和图形Tektronix 4014环境，尽管xterm是一个完整的终端模拟包，但是运行它不需要太多的资源和内存。由于这种特性，xterm包在针对老硬件设计的Linux发行版中仍然很常见。有些图形桌面环境（比如fluxbox）用它作为默认的终端模拟包。
+
+尽管没有太多炫目的特性，但是xterm包提供了一个非常好的功能，即模拟VT220终端，最新的xterm版本甚至能模拟VT系列的颜色控制码，因而能够在脚本中使用颜色。
+       按住鼠标几个键同时按下CTRL可以访问xterm的几个菜单。包括xterm主菜单、VT选项菜单和VT字体选项菜单
+
+
 # OS
 
 ## Ubuntu
