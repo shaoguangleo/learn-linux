@@ -85,23 +85,127 @@ tee可以保证你同时在屏幕上看到ls的输出并写入文件 my.log。
 
 tee 的解释为：_read from standard input and write to standard output and files_
 
+
+
 ## cp - 万能拷贝
 
-### 命令简介
+### cp命令简介
+
+> cp - copy files and directories
+
+很简单，就是拷贝文件和文件夹。
+
+### 命令格式
+
+简单的格式如下所示，`cp`后面跟上选项，然后是`SRC`，最后是`DEST`。
 
 ```
-cp - copy files and directories
+cp [选项]... SOURCE... DIRECTORY
 ```
 
-没错，cp就是copy的缩写，拷贝文件和目录的意思。
+下面说几个最常用的选项实例。
 
-简单的应用就是cp source dest，但是我确保下面的几个应该会让你眼前一亮的。
+首先假设有两个文件夹`dir1`和`dir2`，里面的内容如下所示：
 
+```
+dir1
+├── a
+├── b
+├── c
+└── d
+dir2
+├── b
+├── d
+└── e
+
+0 directories, 7 files
+```
+
+详细信息如下所示：
+
+```
+➜  ll *
+dir1:
+total 0
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:23 a
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:23 b
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:23 c
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:23 d
+
+dir2:
+total 0
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:25 b
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:25 d
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:25 e
+```
+
+`cp`最常用的选项如下所示：
+
+- `i` : 覆盖一个已经存在的文件前，提示用户进行确认
+- `r`：递归地复制目录及其内容，复制目录的时候必须使用这个参数
+- `u`：只复制不存在或者更新的文件
+- `v`：复制文件时，显示复制信息
+
+
+### 实例 - 组合rv
+
+这个在显示复制信息的时候，也可以复制目录
+
+```
+➜   cp -rv dir1/* dir2/
+‘dir1/a’ -> ‘dir2/a’
+‘dir1/b’ -> ‘dir2/b’
+‘dir1/c’ -> ‘dir2/c’
+‘dir1/d’ -> ‘dir2/d’
+
+```
+
+### 实例 - 拷贝时提示确认
+
+这个参数在使用rm的时候已经记得使用，不然就像`rm -rf /`一样，一个公司没有了。
+
+```
+➜  cp -i dir1/* dir2/
+cp: overwrite ‘dir2/a’? y
+cp: overwrite ‘dir2/b’? y
+cp: overwrite ‘dir2/c’? y
+```
+
+
+### 实例 - 只拷贝不存在或更新的文件
+
+`u`表示`update`，也就是从一个目录拷贝到另外一个目录时，只会复制那些不存在或者目标目录相应文件的更新文件。
+
+执行下面的命令：
+
+```
+cp -u dir1/* dir2/
+```
+
+可以得到：
+
+```
+➜  ll *
+dir1:
+total 0
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:23 a
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:23 b
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:23 c
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:23 d
+
+dir2:
+total 0
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:29 a
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:25 b
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:29 c
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:25 d
+-rw-rw-r-- 1 leo leo 0 Jul 20 21:25 e
+```
 
 
 ### 实例 如何用cp拷贝指定序号的文件
 
-现在有文件夹filename，内有文档，名字是从1.dat, 2.dat, 3.dat 一直到9999.dat,10000.dat,现在希望从第N组数据即N.dat到第M组数据M.dat的文件拷贝到别的文件夹中，方法如下：
+现在有文件夹`filename`，内有文档，名字是从`1.dat, 2.dat, 3.dat` 一直到`9999.dat,10000.dat`,现在希望从第`N`组数据即`N.dat`到第`M`组数据`M.dat`的文件拷贝到别的文件夹中，方法如下：
 
 ```
 cp {N..M}.dat   newfilename/
